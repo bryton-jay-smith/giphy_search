@@ -1,1 +1,1 @@
-# giphy_search
+# Giphy Search Page
