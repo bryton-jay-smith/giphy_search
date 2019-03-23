@@ -1,1 +1,21 @@
 /* Style Sheet */
+#title {
+    font-size: 500%;
+    text-align: center;
+    font-weight: bolder;
+    text-decoration-line: underline;
+}
+
+#suggestions{
+    font-size: 200%;
+    padding: 0%;
+}
+
+#suggestionBox {
+    background-color: lightgray;
+    height: 80px;
+}
+
+#searchbox {
+    
+}
