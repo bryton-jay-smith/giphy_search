@@ -1,7 +1,5 @@
 <!doctype html>
 <html lang="en">
-  128x36
-  384x108
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,30 +12,36 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-4"></div>
-      <div class="col-4" id="pageTitle">GIF Search</div>
-      <div class="col-4"></div>
-    </divc
-    <div class="row">
       <div class="col-1"></div>
-      <div class="col-2" id="suggestions">Suggestions:</div>
-      <div class="col-9"></div>
+      <div class="col-10" id="pageTitle">GIF Search</div>
+      <div class="col-1"></div>
     </div>
+    <hr>
     <div class="row">
       <div class="col-1"></div>
-      <div class="col-10" id="suggestionBox">test</div>
+      <div class="col-10" id="suggestionHead">Suggestions:<div id="suggestionBox"></div></div>
       <div class="col-1"></div>
     </div>
     <div class="row">
-      <div class="col-4"></div>
-      <div class="col-4"><input type="text" id="searchBox" value=""></div>
-      <div class="col-4"></div>
+        <div class="col-1"></div>
+        <div class="col-10" id="historyHead">History:<div id="historyBox"></div></div>
+        <div class="col-1"></div>
+      </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10 searchArea"><input type="text" id="searchBox" value=""><button id="searchButton">Search</button></div>
+      <div class="col-1"></div>
     </div>
-  </div>
-  <!--Closes BS container-->
-  <script type="text/javascript" src="assets/javascript/jquery-3.3.1.slim.min.js"></script>
-  <script type="text/javascript" src="assets/javascript/popper.min.js"></script>
-  <script type="text/javascript" src="assets/javascript/bootstrap.min.js"></script>
-  <script type="text/javascript" src="assets/javascript/main.js"></script>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10" id="results"></div>
+      <div class="col-1"></div> 
+    </div>
+  </div><!--Closes BS container-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="assets/javascript/popper.min.js"></script>
+  <script src="assets/javascript/bootstrap.min.js"></script>
+  <script src="/assets/javascript/apikey.js"></script>
+  <script src="assets/javascript/main.js"></script>
 </body>
 </html>

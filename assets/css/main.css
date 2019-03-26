@@ -1,21 +1,73 @@
 /* Style Sheet */
+html {
+  min-width: 600px;
+}
 #pageTitle {
     font-size: 500%;
     text-align: center;
-    font-weight: bolder;
-    text-decoration-line: underline;
+    font-weight: bold;
 }
 
-#suggestions{
+#suggestionHead, #historyHead{
     font-size: 200%;
     padding: 0%;
 }
 
-#suggestionBox {
-    background-color: lightgray;
-    height: 80px;
+#suggestionBox, #historyBox {
+    padding: 5px 10px 5px 10px;
+    min-height: 45px;
+    display: inline;
+    font-size: 18px;
 }
 
-#searchbox {
-    
+.searchArea {
+    text-align: center;
+    margin: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 200%;
+}
+
+#searchBox {
+  max-width: 325px;
+  width: auto;
+}
+
+#searchButton{
+}
+
+.gifItem {
+  margin: 5px;
+  margin-left: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#results {
+  width: 100%;
+  min-height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.searchResult {
+  width: 250px;
+  display: inline-grid;
+  display: -ms-inline-grid;
+  display: -moz-inline-grid;
+  height: 300px;
+  margin: 10px;
+}
+
+.gifResult {
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  height: 250px;
+  min-width: 200px;
+}
+
+.rating {
+  text-align: center;
 }
