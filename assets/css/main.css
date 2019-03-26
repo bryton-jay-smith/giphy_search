@@ -14,11 +14,12 @@ html {
 }
 
 #suggestionBox, #historyBox {
-    padding: 5px 10px 5px 10px;
+    margin-left: 10px;
     min-height: 45px;
     display: inline;
     font-size: 18px;
 }
+
 
 .searchArea {
     text-align: center;
@@ -31,9 +32,6 @@ html {
 #searchBox {
   max-width: 325px;
   width: auto;
-}
-
-#searchButton{
 }
 
 .gifItem {
@@ -70,4 +68,15 @@ html {
 
 .rating {
   text-align: center;
+}
+
+#eraseHistory {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.col-10 {
+  padding: 0;
 }

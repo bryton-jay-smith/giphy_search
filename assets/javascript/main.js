@@ -1,13 +1,13 @@
 $(document).ready(function () {
 
-  var gifSugg = [
-    "dog", "cat", "rabbit", "hamster", "skunk", "goldfish",
-    "bird", "ferret", "turtle", "sugar glider", "chinchilla",
-    "hedgehog", "hermit crab", "gerbil", "pygmy goat", "chicken",
-    "capybara", "teacup pig", "serval", "salamander", "frog"
-  ];
-
+  if (localStorage.history){
+    var history = JSON.parse(localStorage.history);
+  } else {
   var history = [];
+  }
+
+ 
+  
 
   function createBttn(arraySelect, classSelect, idSelect) {
     $(idSelect).empty();
@@ -16,7 +16,7 @@ $(document).ready(function () {
       a.addClass(classSelect);
       a.attr("data-type", arraySelect[i]);
       a.text(arraySelect[i]);
-      $(idSelect).prepend(a);
+      $(idSelect).append(a);
     }
   };
 
@@ -66,8 +66,10 @@ $(document).ready(function () {
     event.preventDefault();
     var newQuery = $("#searchBox").val().trim();
     history.push(newQuery);
+    localStorage.setItem("history", JSON.stringify(history));
     createBttn(history, "gifItem", "#historyBox");
     $("#results").empty();
+    //$("#suggestionBox").empty();
     $(".gifItem").removeClass("active");
     $(this).addClass("active");
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + newQuery + apiURL;
@@ -95,5 +97,11 @@ $(document).ready(function () {
       });
   });
 
-  createBttn(gifSugg, "gifItem", "#suggestionBox");
+  $("#eraseHistory").on ("click", function(){
+    localStorage.clear();
+    $("#historyBox").empty(); 
+    history = [];
+  });
+
+  createBttn(history, "gifItem", "#historyBox");
 });
