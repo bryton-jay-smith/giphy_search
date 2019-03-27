@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-  var apiURL ="&api_key=MMVftAf6p83N4vqXL6GkHTEQpMF4vx5y";
-
   if (localStorage.history){
     var history = JSON.parse(localStorage.history);
   } else {
@@ -24,7 +22,7 @@ $(document).ready(function () {
     $(".gifItem").removeClass("active");
     $(this).addClass("active");
     var queryText = $(this).attr("data-type");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + queryText + apiURL;
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + queryText + "&api_key=MMVftAf6p83N4vqXL6GkHTEQpMF4vx5y";
     $.ajax({
       url: queryURL,
       method: "GET"
