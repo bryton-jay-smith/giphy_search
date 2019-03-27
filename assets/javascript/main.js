@@ -69,7 +69,7 @@ $(document).ready(function () {
     //$("#suggestionBox").empty();
     $(".gifItem").removeClass("active");
     $(this).addClass("active");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + newQuery + apiURL;
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + newQuery + "&api_key=MMVftAf6p83N4vqXL6GkHTEQpMF4vx5y";
     $.ajax({
       url: queryURL,
       method: "GET"
