@@ -5,10 +5,7 @@ $(document).ready(function () {
   } else {
   var history = [];
   }
-
- 
   
-
   function createBttn(arraySelect, classSelect, idSelect) {
     $(idSelect).empty();
     for (var i = 0; i < arraySelect.length; i++) {
