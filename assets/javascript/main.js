@@ -5,10 +5,7 @@ $(document).ready(function () {
   } else {
   var history = [];
   }
-
- 
   
-
   function createBttn(arraySelect, classSelect, idSelect) {
     $(idSelect).empty();
     for (var i = 0; i < arraySelect.length; i++) {
@@ -25,7 +22,7 @@ $(document).ready(function () {
     $(".gifItem").removeClass("active");
     $(this).addClass("active");
     var queryText = $(this).attr("data-type");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + queryText + apiURL;
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + queryText + "&api_key=MMVftAf6p83N4vqXL6GkHTEQpMF4vx5y";
     $.ajax({
       url: queryURL,
       method: "GET"
