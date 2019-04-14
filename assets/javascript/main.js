@@ -62,36 +62,38 @@ $(document).ready(function () {
   $("#searchButton").on("click", function (event) {
     event.preventDefault();
     var newQuery = $("#searchBox").val().trim();
-    history.push(newQuery);
-    localStorage.setItem("history", JSON.stringify(history));
-    createBttn(history, "gifItem", "#historyBox");
-    $("#results").empty();
-    //$("#suggestionBox").empty();
-    $(".gifItem").removeClass("active");
-    $(this).addClass("active");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + newQuery + "&api_key=MMVftAf6p83N4vqXL6GkHTEQpMF4vx5y";
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    })
-      .then(function (response) {
-        var results = response.data;
-        for (var i = 0; i < results.length; i++) {
-          var gifDiv = $("<div class=\"searchResult\">");
-          var rating = results[i].rating;
-          var animated = results[i].images.fixed_height.url;
-          var still = results[i].images.fixed_height_still.url;
-          var gifImage = $("<img>");
-          gifImage.attr("src", still);
-          gifImage.attr("data-still", still);
-          gifImage.attr("data-animate", animated);
-          gifImage.attr("data-state", "still");
-          gifImage.addClass("gifResult");
-          gifDiv.append(gifImage);
-          gifDiv.append("<div class=\"rating\">" + "Rating: " + rating + "</div>");
-          $("#results").append(gifDiv);
-        }
-      });
+    if (newQuery !== "") {
+      history.push(newQuery);
+      localStorage.setItem("history", JSON.stringify(history));
+      createBttn(history, "gifItem", "#historyBox");
+      $("#results").empty();
+      //$("#suggestionBox").empty();
+      $(".gifItem").removeClass("active");
+      $(this).addClass("active");
+      var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + newQuery + "&api_key=MMVftAf6p83N4vqXL6GkHTEQpMF4vx5y";
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+          .then(function (response) {
+            var results = response.data;
+            for (var i = 0; i < results.length; i++) {
+              var gifDiv = $("<div class=\"searchResult\">");
+              var rating = results[i].rating;
+              var animated = results[i].images.fixed_height.url;
+              var still = results[i].images.fixed_height_still.url;
+              var gifImage = $("<img>");
+              gifImage.attr("src", still);
+              gifImage.attr("data-still", still);
+              gifImage.attr("data-animate", animated);
+              gifImage.attr("data-state", "still");
+              gifImage.addClass("gifResult");
+              gifDiv.append(gifImage);
+              gifDiv.append("<div class=\"rating\">" + "Rating: " + rating + "</div>");
+              $("#results").append(gifDiv);
+            }
+          });
+    } else {console.log("Entry is emply")}
   });
 
   $("#eraseHistory").on ("click", function(){
